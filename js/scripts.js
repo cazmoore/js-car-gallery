@@ -55,20 +55,29 @@
 
       // Add EventListener to make overlay move with scroll and resize
 
+      window.addEventListener('scroll', function(){
 
+        if(overlay){
 
+          overlay.style.top = window.pageYOffset + "px";
+          overlay.style.left = window.pageXOffset + "px";
 
+        }
 
+      });
 
+      window.addEventListener('resize', function(){
 
-      console.log(popUpImage)
+        if(overlay){
 
+          overlay.style.top = window.pageYOffset + "px";
+          overlay.style.left = window.pageXOffset + "px";
+          overlay.style.width = window.innerWidth + "px";
+          overlay.style.height = window.innerHeight + "px";
+
+        }
+
+      });
     }
-
-
-
   });
-
-  // console.log(carimages);
-
-}());
+}()); // load the document first then execute js function
